@@ -1,24 +1,36 @@
 import { useState, useEffect } from "react";
 import TodoForm from "../components/TodoForm";
+import TodoList from "../components/TodoList";
+import "../styles.css";
 
 const TodoPage = () => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    return JSON.parse(localStorage.getItem("todos")) || [];
+  });
+
+  const addTodo = (text) => {
+    setTodos([...todos, { id: Date.now(), text, completed: false }]);
+  };
+
+  const toggleTodo = (id) => {
+    setTodos(todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)));
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
 
   useEffect(() => {
-    // Fetch todos or initialize state here
-    setTodos([]);
-  }, []);
+    console.log("todos", todos);
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   return (
     <div>
-      <h1>📋Todo List</h1>
-      <TodoForm addTodo={(text) => setTodos([...todos, text])} />
+      <h1>📋Todo List </h1>
+      <TodoForm addTodo={addTodo} />
 
-      <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>{todo}</li>
-        ))}
-      </ul>
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
     </div>
   );
 };

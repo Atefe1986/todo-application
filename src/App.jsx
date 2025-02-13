@@ -1,27 +1,19 @@
-import { useState } from "react";
-import TodoList from "./components/TodoList";
-import TodoForm from "./components/TodoForm";
+import TodoPage from "./pages/TodoPage";
+import AboutPage from "./pages/AboutPage";
+import { Link, Routes, Route } from "react-router-dom";
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
-
-  const addTodo = (text) => {
-    setTodos([...todos, { id: Date.now(), text, completed: false }]);
-  };
-
-  const toggleTodo = (id) => {
-    setTodos(todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)));
-  };
-
-  const deleteTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
-
   return (
     <div>
-      <h1>Todo List</h1>
-      <TodoForm addTodo={addTodo} />
-      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      <nav>
+        <Link to="/">Todo</Link>
+        <Link to="/about">About</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<TodoPage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
     </div>
   );
 };
