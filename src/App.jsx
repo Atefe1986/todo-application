@@ -7,7 +7,7 @@ const App = () => {
     <div>
       <nav>
         <Link to="/">Todo</Link>
-        <Link to="/about">Om</Link>
+        <Link to="/about">About</Link>
       </nav>
 
       <Routes>
