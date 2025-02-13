@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  
+  nav {
+    background: #333;
+    padding: 10px;
+  }
+  
+  nav a {
+    color: white;
+    margin: 10px;
+    text-decoration: none;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    background: #f4f4f4;
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .todo-item {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .todo-item.removing {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  .todo-item.completed {
+    background: #f0f0f0;
+    text-decoration: line-through;
+  }
+  
+  .toggle-btn {
+    background:#f0f0f0;
+
+    color: rgba(215, 0, 0, 0.955);
+    border: none; padding: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.3s ease;
+  }
+  
+    .delete-btn {
+        background: #dc3545;
+        color: white;
+        border: none;
+        padding: 5px;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: background 0.3s ease;
+    } 
+ 
+
+  .toggle-btn:hover,
+  .delete-btn:hover {
+    opacity: 0.8;
+  }

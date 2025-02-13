@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import TodoForm from "../components/TodoForm";
 
 const TodoPage = () => {
   const [todos, setTodos] = useState([]);
@@ -10,7 +11,9 @@ const TodoPage = () => {
 
   return (
     <div>
-      <h1>Todo List</h1>
+      <h1>📋Todo List</h1>
+      <TodoForm addTodo={(text) => setTodos([...todos, text])} />
+
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>{todo}</li>
