@@ -26,12 +26,15 @@ const TodoPage = () => {
   }, [todos]);
 
   return (
-    <div>
+    <>
       <h1>📋Todo List </h1>
-      <TodoForm addTodo={addTodo} />
 
-      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
-    </div>
+      <div className="todo-container">
+        <TodoForm addTodo={addTodo} />
+
+        <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+      </div>
+    </>
   );
 };
 

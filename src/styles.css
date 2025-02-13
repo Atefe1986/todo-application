@@ -1,12 +1,11 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   text-align: center;
   margin: 0;
   padding: 0;
-  background: #f8f9fa;
+  background: #f1f1f3;
 }
 
-/* نوار بالایی */
 nav {
   background: #333;
   padding: 10px;
@@ -15,39 +14,79 @@ nav {
 }
 
 nav a {
-  color: white;
+  color: #f6e9de;
   margin: 10px;
   text-decoration: none;
   font-size: 16px;
+  }
+  
+  nav a:hover {
+    color: #f37826;
+    transition: all 0.5s ease;
+}
+h1 {
+  color: #f37826;
+  margin-top: 20px;
 }
 
-/* استایل لیست وظایف */
+.input {
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+  margin: 20px;
+  box-shadow: #b0b0af;
+  color: #333;
+}
+
+button[type="submit"] {
+  background-color: #b0b0af; 
+  color: #333;
+  border: none; 
+  padding: 10px 20px; 
+   font-size: 16px; 
+  cursor: pointer; 
+  border-radius: 5px;  
+    transition: background-color 0.3s ease, transform 0.2s ease;  
+}
+
+button[type="submit"]:hover {
+  background-color: #f37826;
+  color: white; 
+  transform: scale(1.1);  
+}
+
+
 ul {
   list-style-type: none;
+  border: 5px solid #b0b0af;
+  border-radius: 5px;
   padding: 0;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 li {
-  background: #f4f4f4;
+  
   margin: 5px;
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
 }
 
-/* استایل تسک‌ها */
 .todo-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
-  margin: 5px 0;
+  padding: 10px;
+  margin: 20px 20px;
   border-radius: 8px;
-  background: #fff;
+  background: #b0b0af;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: background 0.3s ease;
+  max-width: 100%;
+  word-break: break-all;
+  overflow: hidden;
+  white-space: normal;
 }
 
 .todo-item.completed {
@@ -55,10 +94,9 @@ li {
   text-decoration: line-through;
 }
 
-/* استایل دکمه‌ها */
 .toggle-btn {
-  background: #ccc;
-  color: white;
+  background: #f6e9de;
+  color: rgb(244, 5, 5);
   border: none;
   padding: 8px;
   cursor: pointer;
@@ -66,13 +104,14 @@ li {
   transition: background 0.3s ease;
 }
 
+
+
 .todo-item.completed .toggle-btn {
-  background: #28a745;
+  background: #7fea98;
 }
 
 .delete-btn {
-  background: #dc3545;
-  color: white;
+  background: #f6e9de;
   border: none;
   padding: 8px;
   cursor: pointer;
@@ -82,34 +121,9 @@ li {
 
 .toggle-btn:hover,
 .delete-btn:hover {
-  opacity: 0.8;
+  color: #f37826;
 }
 
-/* ✅ استایل نوار پایینی (Bottom Navigation Bar) */
-.bottom-nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background: #333;
-  display: flex;
-  justify-content: space-around;
-  padding: 10px 0;
-  border-top: 2px solid #444;
-}
-
-.bottom-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.bottom-nav a i {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
 
 .popup {
   position: fixed;
