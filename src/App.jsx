@@ -14,6 +14,10 @@ const App = () => {
         <Route path="/" element={<TodoPage />} />
         <Route path="/about" element={<AboutPage />} />
       </Routes>
+
+      <footer>
+        <p>© 2025 All rights reserved.</p>
+      </footer>
     </div>
   );
 };
