@@ -8,6 +8,8 @@ const TodoPage = () => {
     return JSON.parse(localStorage.getItem("todos")) || [];
   });
 
+  const [filter, setFilter] = useState("all");
+
   const addTodo = (text) => {
     setTodos([...todos, { id: Date.now(), text, completed: false }]);
   };
@@ -25,14 +27,25 @@ const TodoPage = () => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "completed") return todo.completed;
+    if (filter === "active") return !todo.completed;
+    return true;
+  });
+
   return (
     <>
       <h1>📋Todo List </h1>
 
       <div className="todo-container">
         <TodoForm addTodo={addTodo} />
+        <div className="filter-buttons">
+          <button onClick={() => setFilter("all")}>All</button>
+          <button onClick={() => setFilter("active")}>Active</button>
+          <button onClick={() => setFilter("completed")}>Completed</button>
+        </div>
 
-        <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
+        <TodoList todos={filteredTodos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       </div>
     </>
   );

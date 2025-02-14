@@ -46,7 +46,7 @@ button[type="submit"] {
    font-size: 16px; 
   cursor: pointer; 
   border-radius: 5px;  
-    transition: background-color 0.3s ease, transform 0.2s ease;  
+  transition: background-color 0.3s ease, transform 0.2s ease;  
 }
 
 button[type="submit"]:hover {
@@ -119,10 +119,37 @@ li {
   transition: background 0.3s ease;
 }
 
-.toggle-btn:hover,
-.delete-btn:hover {
-  color: #f37826;
+
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 10px;  
+  background-color: #f6e9de;
+  max-width: 400px;
+  margin: 20px auto;
+  border-radius: 5px;
+ 
 }
+
+
+
+.filter-buttons button {
+  background: #b0b0af;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;  
+}
+
+.filter-buttons button:hover {
+  background: #f37826;
+  color: white;
+}
+
 
 
 .popup {
@@ -136,18 +163,16 @@ li {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   width: 300px;
   text-align: center;
-  display: none; /* در ابتدا مخفی */
+  display: none; 
   z-index: 1000;
 }
 
-/* نمایش پاپ‌آپ */
 .popup.active {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* دکمه بسته */
 .popup-close {
   margin-top: 10px;
   padding: 10px;
@@ -159,7 +184,6 @@ li {
 }
 
 
-/* ✅ ریسپانسیو برای موبایل */
 @media (min-width: 768px) {
   .todo-item {
     flex-direction: column;
