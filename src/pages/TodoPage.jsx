@@ -34,6 +34,9 @@ const TodoPage = () => {
   const clearCompletedTodos = () => {
     setTodos(todos.filter((todo) => !todo.completed));
   };
+  const handleFilterClick = (filterValue) => {
+    setFilter(filterValue);
+  };
 
   useEffect(() => {
     if (allCompleted) {
@@ -54,9 +57,15 @@ const TodoPage = () => {
       <div className="todo-container">
         <TodoForm addTodo={addTodo} />
         <div className="filter-buttons">
-          <button onClick={() => setFilter("all")}>All</button>
-          <button onClick={() => setFilter("active")}>Active</button>
-          <button onClick={() => setFilter("completed")}>Completed</button>
+          <button onClick={() => handleFilterClick("all")} className={filter === "all" ? "active" : ""}>
+            All
+          </button>
+          <button onClick={() => handleFilterClick("active")} className={filter === "active" ? "active" : ""}>
+            Active
+          </button>
+          <button onClick={() => handleFilterClick("completed")} className={filter === "completed" ? "active" : ""}>
+            Completed
+          </button>
         </div>
       </div>
 

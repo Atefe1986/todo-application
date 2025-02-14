@@ -150,6 +150,11 @@ li {
   color: white;
 }
 
+.filter-buttons button.active {
+  background: #f37826;
+  color: white;
+}
+
 .clear-button {
   background: #f6e9de;
   border: none;
