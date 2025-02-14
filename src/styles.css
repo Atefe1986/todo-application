@@ -150,33 +150,52 @@ li {
   color: white;
 }
 
+.clear-button {
+  background: #f6e9de;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;  
+}
 
+.clear-button:hover {
+  background: #f37826;
+  color: white;
+}
 
 .popup {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  width: 300px;
-  text-align: center;
-  display: none; 
-  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px); 
+  z-index: 1000; 
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .popup.active {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  opacity: 1;
 }
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
 
 .popup-close {
   margin-top: 10px;
   padding: 10px;
-  background: #dc3545;
+  background: #f37826;
   color: white;
   border: none;
   border-radius: 5px;
