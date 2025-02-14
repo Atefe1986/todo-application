@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
   return (
     <ul>
-      {todos.length === 0 ? <p>✅ There is nothing to do!</p> : null}
+      {todos.length === 0 ? <p>✅ There is nothing to show!</p> : null}
       {todos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
       ))}
