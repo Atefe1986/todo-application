@@ -8,16 +8,27 @@ body {
 
 nav {
   background: #333;
-  padding: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  text-align: center;
 }
 
 nav a {
   color: #f6e9de;
-  margin: 10px;
+  margin: 5px;
   text-decoration: none;
   font-size: 16px;
+  padding: 5px;
 }
 
 nav a:hover {
@@ -228,8 +239,19 @@ video {
     background: #b0b0af;
   }
 
+  nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+  .menu {
+    display: flex;
+    gap: 20px;
+  }
+
   nav a {
-    font-size: 14px;
+    font-size: 16px;
     margin: 5px;
   }
 

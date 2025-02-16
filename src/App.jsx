@@ -6,8 +6,18 @@ const App = () => {
   return (
     <div>
       <nav>
-        <Link to="/">Todo</Link>
-        <Link to="/about">About</Link>
+        <div className="logo">
+          <img src="/logo.png" alt="Logo" />
+        </div>
+
+        <div className="menu">
+          <Link to="/" className="nav-link">
+            Todo
+          </Link>
+          <Link to="/about" className="nav-link">
+            About
+          </Link>
+        </div>
       </nav>
 
       <Routes>
