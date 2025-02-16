@@ -217,8 +217,9 @@ li {
 }
 
 video {
-  width: 80%;
+  width: 70%;
   margin: 20px auto;
+  padding: 10px;
   display: block;
   border-radius: 5px;
 }
